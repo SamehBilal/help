@@ -12,7 +12,7 @@
             <div>
                 <x-label
                     for="search"
-                    :value="__('Search')"
+                    :value="__('content.Search')"
                     class="sr-only"
                 />
                 <x-input
@@ -20,14 +20,14 @@
                     type="text"
                     class="block mt-1 w-full"
                     wire:model.defer="search"
-                    placeholder="{{ __('Search by comment body') }}"
+                    placeholder="{{ __('content.Search by comment body') }}"
                 />
             </div>
 
             <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
                 <x-label
                     for="visibility"
-                    :value="__('Comment visibility')"
+                    :value="__('content.Comment visibility')"
                 />
                 <div class="mt-1 sm:col-span-2 sm:mt-0 flex items-center sm:justify-end space-x-10">
                     <div class="flex items-center">
@@ -41,7 +41,7 @@
                         />
                         <x-label
                             for="show-all"
-                            :value="__('All')"
+                            :value="__('content.All')"
                             class="ml-3"
                         />
                     </div>
@@ -57,7 +57,7 @@
                         />
                         <x-label
                             for="show-public"
-                            :value="__('Public')"
+                            :value="__('content.Public')"
                             class="ml-3"
                         />
                     </div>
@@ -73,7 +73,7 @@
                         />
                         <x-label
                             for="show-private"
-                            :value="__('Private')"
+                            :value="__('content.Private')"
                             class="ml-3"
                         />
                     </div>
@@ -83,7 +83,7 @@
             <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
                 <x-label
                     for="perPage"
-                    :value="__('Results per page')"
+                    :value="__('content.Results per page')"
                     class="sm:mt-px sm:pt-2"
                 />
                 <div class="mt-1 sm:flex sm:justify-end sm:col-span-2 sm:mt-0">
@@ -102,7 +102,7 @@
             <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
                 <x-label
                     for="sortDirection"
-                    :value="__('Sort results by')"
+                    :value="__('content.Sort results by')"
                     class="sm:mt-px sm:pt-2"
                 />
                 <div class="mt-1 sm:flex sm:justify-end sm:col-span-2 sm:mt-0">
@@ -111,8 +111,8 @@
                         class="block sm:!w-auto"
                         wire:model.defer="sortDirection"
                     >
-                        <option value="desc">{{ __('Newest first') }}</option>
-                        <option value="asc">{{ __('Oldest first') }}</option>
+                        <option value="desc">{{ __('content.Newest first') }}</option>
+                        <option value="asc">{{ __('content.Oldest first') }}</option>
                     </x-select>
                 </div>
             </div>
@@ -124,14 +124,14 @@
                     wire:target="resetFilters"
                     type="button"
                 >
-                    {{ __('Reset filters') }}
+                    {{ __('content.Reset filters') }}
                 </x-button.text>
                 <x-button.primary
                     wire:loading.attr="disabled"
                     wire:target="resetFilters"
                     class="ml-3"
                 >
-                    {{ __('Apply filters') }}
+                    {{ __('content.Apply filters') }}
                 </x-button.primary>
             </div>
         </div>
@@ -154,7 +154,7 @@
                         <div class="relative">
                             <img
                                 src="{{ auth()->user()->getFirstMediaUrl('avatar') }}"
-                                alt="{{ __('Avatar') }}"
+                                alt="{{ __('content.Avatar') }}"
                                 class="w-10 h-10 rounded-full bg-white ring-8 ring-white dark:bg-slate-800 dark:ring-slate-800"
                             >
                         </div>
@@ -168,11 +168,11 @@
                                     </div>
                                     <div class="ml-3">
                                         <h3 class="text-sm font-medium text-yellow-800">
-                                            {{ __('This ticket is closed') }}
+                                            {{ __('content.This ticket is closed') }}
                                         </h3>
                                         <div class="mt-2 text-sm text-yellow-700">
                                             <p>
-                                                {{ __('You can not comment on a closed ticket.') }}
+                                                {{ __('content.You can not comment on a closed ticket.') }}
                                             </p>
                                         </div>
                                     </div>
@@ -186,11 +186,11 @@
                                     </div>
                                     <div class="ml-3">
                                         <h3 class="text-sm font-medium text-red-800">
-                                            {{ __('Support expired') }}
+                                            {{ __('content.Support expired') }}
                                         </h3>
                                         <div class="mt-2 text-sm text-red-700">
                                             <p>
-                                                {{ __('Your license support period has ended, please renew your license to continue.') }}
+                                                {{ __('content.Your license support period has ended, please renew your license to continue.') }}
                                             </p>
                                         </div>
                                     </div>
@@ -244,7 +244,7 @@
                             <div class="relative">
                                 <img
                                     src="{{ $comment->commentator->getFirstMediaUrl('avatar') }}"
-                                    alt="{{ __('Avatar') }}"
+                                    alt="{{ __('content.Avatar') }}"
                                     @class(['w-10 h-10 rounded-full ring-8 ring-white dark:ring-slate-800', 'bg-white dark:bg-slate-800' => $comment->commentator instanceof \App\Models\Agent, 'bg-slate-200' => $comment->commentator instanceof \App\Models\User])
                                 >
                             </div>
@@ -262,7 +262,7 @@
                                         {{ $comment->created_at->diffForHumans() }}
                                         @if($comment->is_private)
                                             <span class="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800">
-                                                {{ __('Private') }}
+                                                {{ __('content.Private') }}
                                             </span>
                                         @endif
                                     </p>
@@ -302,7 +302,7 @@
                         <div class="relative">
                             <img
                                 src="{{ auth()->user()->getFirstMediaUrl('avatar') }}"
-                                alt="{{ __('Avatar') }}"
+                                alt="{{ __('content.Avatar') }}"
                                 class="w-10 h-10 rounded-full bg-white ring-8 ring-white dark:bg-slate-800 dark:ring-slate-800"
                             >
                         </div>
@@ -316,11 +316,11 @@
                                     </div>
                                     <div class="ml-3">
                                         <h3 class="text-sm font-medium text-yellow-800">
-                                            {{ __('This ticket is closed') }}
+                                            {{ __('content.This ticket is closed') }}
                                         </h3>
                                         <div class="mt-2 text-sm text-yellow-700">
                                             <p>
-                                                {{ __('You can not comment on a closed ticket.') }}
+                                                {{ __('content.You can not comment on a closed ticket.') }}
                                             </p>
                                         </div>
                                     </div>
@@ -334,11 +334,11 @@
                                     </div>
                                     <div class="ml-3">
                                         <h3 class="text-sm font-medium text-red-800">
-                                            {{ __('Support expired') }}
+                                            {{ __('content.Support expired') }}
                                         </h3>
                                         <div class="mt-2 text-sm text-red-700">
                                             <p>
-                                                {{ __('Your license support period has ended, please renew your license to continue.') }}
+                                                {{ __('content.Your license support period has ended, please renew your license to continue.') }}
                                             </p>
                                         </div>
                                     </div>
@@ -360,8 +360,8 @@
     @else
         <div class="text-center">
             <x-heroicon-o-chat-bubble-left-right class="mx-auto h-12 w-12 text-slate-400" />
-            <h3 class="mt-2 text-sm font-medium text-slate-900 dark:text-slate-200">{{ __('No comments') }}</h3>
-            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">{{ __('Get started by submitting a new comment.') }}</p>
+            <h3 class="mt-2 text-sm font-medium text-slate-900 dark:text-slate-200">{{ __('content.No comments') }}</h3>
+            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">{{ __('content.Get started by submitting a new comment.') }}</p>
         </div>
 
         <!-- Comment form-->
@@ -374,7 +374,7 @@
                     <div class="relative">
                         <img
                             src="{{ auth()->user()->getFirstMediaUrl('avatar') }}"
-                            alt="{{ __('Avatar') }}"
+                            alt="{{ __('content.Avatar') }}"
                             class="w-10 h-10 rounded-full bg-white ring-8 ring-white dark:bg-slate-800 dark:ring-slate-800"
                         >
                     </div>

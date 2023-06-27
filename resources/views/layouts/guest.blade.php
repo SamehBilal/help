@@ -1,7 +1,9 @@
+@php $locale = session()->get('locale'); $languages = App\Models\Language::all(); @endphp
 <!DOCTYPE html>
 <html
     lang="{{ str_replace('_', '-', app()->getLocale()) }}"
     class="h-full"
+    dir="{{ $locale == 'ar' ? 'rtl':'ltr' }}"
 >
     <head>
         <meta charset="utf-8">
@@ -89,7 +91,7 @@
                                     aria-expanded="false"
                                     :aria-expanded="open.toString()"
                                 >
-                                    <span class="sr-only">{{ __('Open main menu') }}</span>
+                                    <span class="sr-only">{{ __('content.Open main menu') }}</span>
                                     <x-heroicon-o-bars-3 class="h-6 w-6" />
                                 </button>
                             </div>
@@ -100,8 +102,11 @@
                             <a
                                 href="{{ route('login') }}"
                                 class="text-base text-white hover:text-blue-100"
+                                @if ($locale == 'ar')
+                                    style="margin-left: 1em;"
+                                @endif
                             >
-                                {{ __('Sign in') }}
+                                {{ __('content.Sign in') }}
                             </a>
                         @else
                             @if(auth()->user()->isBanned())
@@ -115,7 +120,7 @@
                                         class="text-base text-white hover:text-blue-100"
                                         onclick="event.preventDefault(); this.closest('form').submit();"
                                     >
-                                        {{ __('Sign out') }}
+                                        {{ __('content.Sign out') }}
                                     </a>
                                 </form>
                             @else
@@ -125,16 +130,16 @@
                                             type="button"
                                             class="inline-flex items-center text-base text-white hover:text-blue-100"
                                         >
-                                            <span>{{ __('My account') }}</span>
+                                            <span>{{ __('content.My account') }}</span>
                                             <x-heroicon-o-chevron-down class="ml-2 h-4 w-4" />
                                         </button>
                                     </x-slot:trigger>
                                     <x-slot:content>
                                         <x-dropdown-link :href="route('user.profile')">
-                                            {{ __('Profile') }}
+                                            {{ __('content.Profile') }}
                                         </x-dropdown-link>
                                         <x-dropdown-link :href="route('user.tickets.list')">
-                                            {{ __('My tickets') }}
+                                            {{ __('content.My tickets') }}
                                         </x-dropdown-link>
                                         <hr>
                                         <form
@@ -146,19 +151,37 @@
                                                 :href="route('logout')"
                                                 onclick="event.preventDefault(); this.closest('form').submit();"
                                             >
-                                                {{ __('Sign out') }}
+                                                {{ __('content.Sign out') }}
                                             </x-dropdown-link>
                                         </form>
                                     </x-slot:content>
                                 </x-dropdown>
                             @endif
                         @endguest
+                        <x-dropdown>
+                            <x-slot:trigger>
+                                <button
+                                    type="button"
+                                    class="inline-flex items-center text-base text-white hover:text-blue-100"
+                                >
+                                    <span>{{ $locale ? __('langs.'.$locale): __('langs.en') }}</span>
+                                    <x-heroicon-o-chevron-down class="ml-2 h-4 w-4" />
+                                </button>
+                            </x-slot:trigger>
+                            <x-slot:content>
+                                @foreach ($languages as $lang)
+                                    <x-dropdown-link :href="route('lang',$lang->code)">
+                                        {{ __('content.'.$lang->name) }}
+                                    </x-dropdown-link>
+                                @endforeach
+                            </x-slot:content>
+                        </x-dropdown>
                         <span class="inline-flex rounded-md shadow">
                             <a
                                 href="{{ route('user.tickets.create') }}"
                                 class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-slate-50"
                             >
-                                {{ __('Submit a ticket') }}
+                                {{ __('content.Submit a ticket') }}
                             </a>
                         </span>
                     </div>
@@ -187,7 +210,7 @@
                                     type="button"
                                     class="bg-white rounded-md p-2 inline-flex items-center justify-center text-blue-slate-400 hover:bg-blue-slate-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
                                 >
-                                    <span class="sr-only">{{ __('Close menu') }}</span>
+                                    <span class="sr-only">{{ __('content.Close menu') }}</span>
                                     <x-heroicon-o-x-mark class="h-6 w-6" />
                                 </button>
                             </div>
@@ -198,26 +221,26 @@
                                     href="/"
                                     class="block px-3 py-2 rounded-md text-base font-medium text-blue-slate-900 hover:bg-blue-slate-50"
                                 >
-                                    {{ __('Home') }}
+                                    {{ __('content.Home') }}
                                 </a>
                                 <a
                                     href="{{ route('guest.collection-list') }}"
                                     class="block px-3 py-2 rounded-md text-base font-medium text-blue-slate-900 hover:bg-blue-slate-50"
                                 >
-                                    {{ __('Knowledge Base') }}
+                                    {{ __('content.Knowledge Base') }}
                                 </a>
                                 <a
                                     href="{{ route('user.tickets.list') }}"
                                     class="block px-3 py-2 rounded-md text-base font-medium text-blue-slate-900 hover:bg-blue-slate-50"
                                 >
-                                    {{ __('My Tickets') }}
+                                    {{ __('content.My Tickets') }}
                                 </a>
                                 @guest
                                     <a
                                         href="{{ route('login') }}"
                                         class="block px-3 py-2 rounded-md text-base font-medium text-blue-slate-900 hover:bg-blue-slate-50"
                                     >
-                                        {{ __('Sign in') }}
+                                        {{ __('content.Sign in') }}
                                     </a>
                                 @else
                                     <form
@@ -230,7 +253,7 @@
                                             class="block px-3 py-2 rounded-md text-base font-medium text-blue-slate-900 hover:bg-blue-slate-50"
                                             onclick="event.preventDefault(); this.closest('form').submit();"
                                         >
-                                            {{ __('Sign out') }}
+                                            {{ __('content.Sign out') }}
                                         </a>
                                     </form>
                                 @endguest
@@ -240,7 +263,7 @@
                                     href="{{ route('user.tickets.create') }}"
                                     class="block text-center w-full py-2 px-4 border border-transparent rounded-md shadow bg-blue-500 text-white font-medium hover:bg-blue-600"
                                 >
-                                    {{ __('Submit a ticket') }}
+                                    {{ __('content.Submit a ticket') }}
                                 </a>
                             </div>
                         </div>

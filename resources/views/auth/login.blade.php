@@ -10,7 +10,7 @@
                     >
                 </a>
                 <h2 class="mt-6 text-3xl font-display tracking-tight text-slate-900">
-                    {{ __('Sign in to your account') }}
+                    {{ __('content.Sign in to your account') }}
                 </h2>
             </div>
 
@@ -19,7 +19,7 @@
                     <div>
                         <div>
                             <p class="text-sm font-medium text-slate-700 sr-only">
-                                {{ __('Sign in with') }}
+                                {{ __('content.Sign in with') }}
                             </p>
                             <div class="mt-1">
                                 <div>
@@ -28,7 +28,7 @@
                                         class="inline-flex w-full justify-center rounded-md border border-slate-300 bg-white py-2 px-4 text-sm font-medium text-slate-500 shadow-sm hover:bg-slate-50"
                                     >
                                         <x-icon-envato class="-ml-1 mr-2 w-5 h-5" />
-                                        <span>{{ __('Sign in with Envato') }}</span>
+                                        <span>{{ __('content.Sign in with Envato') }}</span>
                                     </a>
                                 </div>
                             </div>
@@ -41,7 +41,7 @@
                                 <div class="w-full border-t border-slate-300"></div>
                             </div>
                             <div class="relative flex justify-center text-sm">
-                                <span class="bg-white px-2 text-slate-500">{{ __('Or continue with') }}</span>
+                                <span class="bg-white px-2 text-slate-500">{{ __('content.Or continue with') }}</span>
                             </div>
                         </div>
                     </div>
@@ -69,7 +69,7 @@
                         <div class="space-y-1">
                             <x-label
                                 for="email"
-                                :value="__('Email')"
+                                :value="__('content.Email')"
                             />
                             <div class="mt-1">
                                 <x-input
@@ -86,7 +86,7 @@
                         <div class="space-y-1">
                             <x-label
                                 for="password"
-                                :value="__('Password')"
+                                :value="__('content.Password')"
                             />
                             <div class="mt-1">
                                 <x-input
@@ -104,11 +104,11 @@
                                 <x-checkbox
                                     id="remember-me"
                                     name="remember-me"
-                                    :value="__('Remember me')"
+                                    :value="__('content.Remember me')"
                                 />
                                 <x-label
                                     for="remember-me"
-                                    :value="__('Remember me')"
+                                    :value="__('content.Remember me')"
                                     class="ml-2"
                                 />
                             </div>
@@ -120,7 +120,7 @@
                                         class="font-medium text-blue-600 hover:text-blue-500"
                                         tabindex="-1"
                                     >
-                                        {{ __('Forgot your password?') }}
+                                        {{ __('content.Forgot your password?') }}
                                     </a>
                                 </div>
                             @endif
@@ -152,18 +152,18 @@
 
                         <div>
                             <x-button.primary class="block w-full">
-                                {{ __('Sign in') }}
+                                {{ __('content.Sign in') }}
                             </x-button.primary>
                         </div>
 
                         <div>
                             <p class="text-sm text-center text-slate-600">
-                                {{ __('Don\'t have an account?') }}
+                                {{ __('content.Don\'t have an account?') }}
                                 <a
                                     href="{{ route('register') }}"
                                     class="font-medium text-blue-600 hover:text-blue-500"
                                 >
-                                    {{ __('Sign up') }}
+                                    {{ __('content.Sign up') }}
                                 </a>
                             </p>
                         </div>

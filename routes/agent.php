@@ -15,6 +15,7 @@ use App\Http\Livewire\Agent\Collection\CollectionDetails;
 use App\Http\Livewire\Agent\Collection\CollectionList;
 use App\Http\Livewire\Agent\Dashboard;
 use App\Http\Livewire\Agent\LabelManager;
+use App\Http\Livewire\Agent\LanguageManager;
 use App\Http\Livewire\Agent\NotificationManager;
 use App\Http\Livewire\Agent\ProductManager;
 use App\Http\Livewire\Agent\Profile\ProfileManager;
@@ -67,5 +68,6 @@ Route::group(['prefix' => 'agent', 'as' => 'agent.'], function () {
         Route::get('labels', LabelManager::class)->name('labels');
         Route::get('products', ProductManager::class)->name('products');
         Route::get('categories', CategoryManager::class)->name('categories');
+        Route::get('languages', LanguageManager::class)->name('languages');
     });
 });

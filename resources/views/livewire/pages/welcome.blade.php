@@ -10,10 +10,10 @@
     <x-slot:header>
         <div class="relative mt-24 max-w-md mx-auto px-4 pb-40 sm:max-w-3xl sm:px-6 md:mt-32 lg:max-w-5xl lg:px-8">
             <h1 class="font-display font-medium tracking-tight text-center text-white text-4xl sm:text-6xl">
-                {{ __('How can we help you?') }}
+                {{ __('content.How can we help you?') }}
             </h1>
             <p class="mt-3 tracking-tight text-center text-white text-lg">
-                {{ __('Search here to get answers to your questions') }}
+                {{ __('content.Search here to get answers to your questions') }}
             </p>
             <div class="relative mt-10 max-w-2xl mx-auto">
                 <livewire:search-form
@@ -36,7 +36,7 @@
                     class="sr-only"
                     id="quick-links-title"
                 >
-                    {{ __('Quick links') }}
+                    {{ __('content.Quick links') }}
                 </h2>
 
                 <div class="relative group bg-white p-6">
@@ -56,11 +56,11 @@
                                     class="absolute inset-0"
                                     aria-hidden="true"
                                 ></span>
-                                {{ __('Knowledge Base') }}
+                                {{ __('content.Knowledge Base') }}
                             </a>
                         </h3>
                         <p class="mt-2 text-sm text-slate-500">
-                            {{ __('Browse our knowledge base to find answers to your questions. You can also search for specific topics using our search form.') }}
+                            {{ __('content.Browse our knowledge base to find answers to your questions. You can also search for specific topics using our search form.') }}
                         </p>
                     </div>
                     <span
@@ -88,11 +88,11 @@
                                     class="absolute inset-0"
                                     aria-hidden="true"
                                 ></span>
-                                {{ __('Get in touch') }}
+                                {{ __('content.Get in touch') }}
                             </a>
                         </h3>
                         <p class="mt-2 text-sm text-slate-500">
-                            {{ __('If you can\'t find what you\'re looking for, you can contact us. We\'re always here to help.') }}
+                            {{ __('content.If you can\'t find what you\'re looking for, you can contact us. We\'re always here to help.') }}
                         </p>
                     </div>
                     <span
@@ -115,10 +115,10 @@
                     id="popular-articles-title"
                     class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl"
                 >
-                    {{ __('Browse our Topics') }}
+                    {{ __('content.Browse our Topics') }}
                 </h2>
                 <p class="mt-4 text-lg tracking-tight text-slate-700">
-                    {{ __('Browse our knowledge base to find answers to your questions.') }}
+                    {{ __('content.Browse our knowledge base to find answers to your questions.') }}
                 </p>
             </div>
             <div class="mt-20">
@@ -134,7 +134,7 @@
                                         href="{{ route('guest.collection-details', $collection) }}"
                                         class="ml-3 flex-shrink-0 text-sm text-blue-600 hover:text-blue-500"
                                     >
-                                        {{ __('View all') }}
+                                        {{ __('content.View all') }}
                                     </a>
                                 </div>
                             </x-slot:header>
@@ -180,16 +180,16 @@
             <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative">
                 <div class="mx-auto max-w-xl text-center">
                     <h2 class="font-display text-3xl tracking-tight text-white sm:text-4xl">
-                        {{ __('Get in touch with us') }}
+                        {{ __('content.Get in touch with us') }}
                     </h2>
                     <p class="mt-4 text-lg tracking-tight text-white">
-                        {{ __('Can\'t find what you are looking for? No worries, Our staff is always here to help you solve the problems you are facing.') }}
+                        {{ __('content.Can\'t find what you are looking for? No worries, Our staff is always here to help you solve the problems you are facing.') }}
                     </p>
                     <a
                         href="{{ route('user.tickets.create') }}"
                         class="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-white text-slate-900 hover:bg-blue-50 active:bg-blue-200 active:text-slate-600 focus-visible:outline-white mt-10"
                     >
-                        {{ __('Submit a ticket') }}
+                        {{ __('content.Submit a ticket') }}
                         <svg
                             class="mt-0.5 ml-2 -mr-1 stroke-slate-900 stroke-2"
                             fill="none"
@@ -234,10 +234,10 @@
                         id="faq-title"
                         class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl"
                     >
-                        {{ $layoutSettings->homepage_faq_title ?? __('Frequently asked questions') }}
+                        {{ __('content.'.$layoutSettings->homepage_faq_title) ?? __('content.Frequently asked questions') }}
                     </h2>
                     <p class="mt-4 text-lg tracking-tight text-slate-700">
-                        {{ $layoutSettings->homepage_faq_description }}
+                        {{ __('content.'.$layoutSettings->homepage_faq_description) }}
                     </p>
                 </div>
                 <ul

@@ -19,6 +19,7 @@ class GeneralSettings extends SettingsMigration
         $this->migrator->add('general.cookie_consent_enabled', false);
         $this->migrator->add('general.cookie_consent_message', 'We uses cookies to ensure you get the best experience on our website.');
         $this->migrator->add('general.cookie_consent_agree', 'Allow cookies');
+        $this->migrator->add('general.saveLanguagesSettings', 'en');
     }
 
     public function down(): void
@@ -36,5 +37,6 @@ class GeneralSettings extends SettingsMigration
         $this->migrator->delete('general.cookie_consent_enabled');
         $this->migrator->delete('general.cookie_consent_message');
         $this->migrator->delete('general.cookie_consent_agree');
+        $this->migrator->delete('general.saveLanguagesSettings');
     }
 }

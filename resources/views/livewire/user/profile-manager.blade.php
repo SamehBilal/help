@@ -1,12 +1,12 @@
 <div>
     <x-slot:title>
-        {{ __('Profile') }}
+        {{ __('content.Profile') }}
     </x-slot:title>
 
     <x-slot:header>
         <div class="relative py-6 max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-5xl lg:px-8">
             <h1 class="font-display font-medium tracking-tight text-white text-4xl">
-                {{ __('Profile') }}
+                {{ __('content.Profile') }}
             </h1>
         </div>
     </x-slot:header>
@@ -21,10 +21,10 @@
                         <div class="pl-4 pr-6 pt-4 pb-4 sm:pl-6 lg:pl-8 xl:pl-6 xl:pt-6">
                             <div>
                                 <h1 class="flex-1 font-display text-lg">
-                                    {{ __('Profile') }}
+                                    {{ __('content.Profile') }}
                                 </h1>
                                 <p class="mt-1 text-sm text-slate-500">
-                                    {{ __('Manage account information or update your login password.') }}
+                                    {{ __('content.Manage account information or update your login password.') }}
                                 </p>
                             </div>
 
@@ -38,7 +38,7 @@
                                 >
                                     <x-label
                                         for="avatar"
-                                        :value="__('Avatar')"
+                                        :value="__('content.Avatar')"
                                     />
                                     <div class="mt-1 flex items-center">
                                         <div x-show="!photoPreview">
@@ -74,7 +74,7 @@
                                                     class="hidden"
                                                 />
                                                 <x-button.secondary @click="$refs.photo.click();">
-                                                    {{ __('Change') }}
+                                                    {{ __('content.Change') }}
                                                 </x-button.secondary>
                                             </div>
                                             @if($this->user->hasMedia('avatar'))
@@ -82,7 +82,7 @@
                                                     wire:click="removeAvatar"
                                                     class="ml-3"
                                                 >
-                                                    {{ __('Remove') }}
+                                                    {{ __('content.Remove') }}
                                                 </x-button.text>
                                             @endif
                                         </div>
@@ -95,14 +95,14 @@
                                 <div class="col-span-12 sm:col-span-6">
                                     <x-label
                                         for="name"
-                                        :value="__('Your name')"
+                                        :value="__('content.Your name')"
                                     />
                                     <x-input
                                         wire:model.defer="name"
                                         id="nameInput"
                                         type="text"
                                         class="mt-1"
-                                        placeholder="{{ __('Your name') }}"
+                                        placeholder="{{ __('content.Your name') }}"
                                     />
                                     <x-input-error
                                         for="name"
@@ -112,14 +112,14 @@
                                 <div class="col-span-12 sm:col-span-6">
                                     <x-label
                                         for="emailInput"
-                                        :value="__('Email address')"
+                                        :value="__('content.Email address')"
                                     />
                                     <x-input
                                         wire:model.defer="email"
                                         id="emailInput"
                                         type="email"
                                         class="mt-1"
-                                        placeholder="{{ __('Email address') }}"
+                                        placeholder="{{ __('content.Email address') }}"
                                     />
                                     <x-input-error
                                         for="email"
@@ -129,7 +129,7 @@
                                 <div class="col-span-12 sm:col-span-6">
                                     <x-label
                                         for="passwordInput"
-                                        :value="__('New password (optional)')"
+                                        :value="__('content.New password (optional)')"
                                     />
                                     <x-input
                                         wire:model.defer="password"
@@ -145,7 +145,7 @@
                                 <div class="col-span-12 sm:col-span-6">
                                     <x-label
                                         for="confirmPasswordInput"
-                                        :value="__('Confirm new password')"
+                                        :value="__('content.Confirm new password')"
                                     />
                                     <x-input
                                         wire:model.defer="password_confirmation"
@@ -164,10 +164,10 @@
                                     class="mr-3"
                                     on="saved"
                                 >
-                                    {{ __('Saved.') }}
+                                    {{ __('content.Saved.') }}
                                 </x-action-message>
                                 <x-button.primary>
-                                    {{ __('Save changes') }}
+                                    {{ __('content.Save changes') }}
                                 </x-button.primary>
                             </div>
                         </div>

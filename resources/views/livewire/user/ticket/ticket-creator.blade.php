@@ -1,12 +1,12 @@
 <div>
     <x-slot:title>
-        {{ __('Submit ticket') }}
+        {{ __('content.Submit a new ticket') }}
     </x-slot:title>
 
     <x-slot:header>
         <div class="relative py-6 max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-5xl lg:px-8">
             <h1 class="font-display font-medium tracking-tight text-white text-4xl">
-                {{ __('Submit new Ticket') }}
+                {{ __('content.Submit a new ticket') }}
             </h1>
         </div>
     </x-slot:header>
@@ -20,7 +20,7 @@
                     <div class="border-b border-slate-200 pl-4 pr-6 pt-4 pb-4 sm:pl-6 lg:pl-8 xl:pl-6 xl:pt-6">
                         <div class="flex items-center">
                             <h1 class="flex-1 font-display text-lg">
-                                {{ __('Submit new ticket') }}
+                                {{ __('content.Submit a new ticket') }}
                             </h1>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                                 <div>
                                     <x-label
                                         for="productSelect"
-                                        :value="__('Product')"
+                                        :value="__('content.Product')"
                                     />
                                     <div class="relative mt-1">
                                         <x-dropdown
@@ -60,7 +60,7 @@
                                                             <span class="ml-3 block truncate">{{ $selectedProduct->name }}</span>
                                                         </span>
                                                     @else
-                                                        <span class=" block truncate">{{ __('Please select a product') }}</span>
+                                                        <span class=" block truncate">{{ __('content.Please select a product') }}</span>
                                                     @endif
                                                     <span class="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-3">
                                                         <x-heroicon-m-chevron-up-down class="h-5 w-5 text-slate-400" />
@@ -98,7 +98,7 @@
                                                             role="button"
                                                             class="-ml-1 relative"
                                                         >
-                                                            {{ __('No products found') }}
+                                                            {{ __('content.No products found') }}
                                                         </x-dropdown-link>
                                                     @endforelse
                                                 </div>
@@ -114,7 +114,7 @@
                                 <div>
                                     <x-label
                                         for="categorySelect"
-                                        :value="__('Category')"
+                                        :value="__('content.Category')"
                                     />
                                     <div class="relative mt-1">
                                         <x-dropdown
@@ -129,7 +129,7 @@
                                                     @if($selectedCategory)
                                                         <span class="block truncate">{{ $selectedCategory->name }}</span>
                                                     @else
-                                                        <span class="block truncate">{{ __('Please select a category') }}</span>
+                                                        <span class="block truncate">{{ __('content.Please select a category') }}</span>
                                                     @endif
                                                     <span class="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-3">
                                                         <x-heroicon-m-chevron-up-down class="h-5 w-5 text-slate-400" />
@@ -158,7 +158,7 @@
                                                             role="button"
                                                             class="-ml-1 relative"
                                                         >
-                                                            {{ __('No categories found') }}
+                                                            {{ __('content.No categories found') }}
                                                         </x-dropdown-link>
                                                     @endforelse
                                                 </div>
@@ -175,7 +175,7 @@
                                     <div>
                                         <x-label
                                             for="productLicenseCode"
-                                            :value="$selectedProduct && $selectedProduct->provider === \App\Enums\ProductProvider::ENVATO ? __('Purchase code') : __('License code')"
+                                            :value="$selectedProduct && $selectedProduct->provider === \App\Enums\ProductProvider::ENVATO ? __('content.Purchase code') : __('content.License code')"
                                         />
                                         <x-input
                                             wire:model.lazy="ticket.license_code"
@@ -197,7 +197,7 @@
                                                 <div class="w-full border-t border-slate-300"></div>
                                             </div>
                                             <div class="relative flex justify-center">
-                                                <span class="bg-white px-2 text-sm text-slate-500">{{ __('OR') }}</span>
+                                                <span class="bg-white px-2 text-sm text-slate-500">{{ __('content.OR') }}</span>
                                             </div>
                                         </div>
                                         <x-button.secondary
@@ -206,7 +206,7 @@
                                             class="block w-full"
                                         >
                                             <x-icon-envato class="-ml-1 mr-2 h-5 w-5" />
-                                            {{ __('Verify purchase with Envato') }}
+                                            {{ __('content.Verify purchase with Envato') }}
                                         </x-button.secondary>
                                         <x-input-error
                                             for="verify-envato-purchase"
@@ -227,7 +227,7 @@
                                                             type="button"
                                                             class="font-medium text-blue-600 hover:text-blue-500"
                                                         >
-                                                            {{ __('Use') }}
+                                                            {{ __('content.Use') }}
                                                         </button>
                                                     </div>
                                                 </li>
@@ -239,14 +239,14 @@
                                 <div>
                                     <x-label
                                         for="ticketSubject"
-                                        :value="__('Subject')"
+                                        :value="__('content.Subject')"
                                     />
                                     <x-input
                                         wire:model.defer="ticket.subject"
                                         id="ticketSubject"
                                         type="text"
                                         class="block mt-1 w-full"
-                                        :placeholder="__('Briefly describe your problem.')"
+                                        :placeholder="__('content.Briefly describe your problem.')"
                                     />
                                     <x-input-error
                                         for="ticket.subject"
@@ -257,7 +257,7 @@
                                 <div>
                                     <x-label
                                         for="ticketContent"
-                                        :value="__('Content')"
+                                        :value="__('content.Content')"
                                     />
                                     <div class="mt-1">
                                         <x-tiptap-comment
@@ -288,7 +288,7 @@
                                                         type="button"
                                                         class="font-medium text-red-600 hover:text-red-500"
                                                     >
-                                                        {{ __('Remove') }}
+                                                        {{ __('content.Remove') }}
                                                     </button>
                                                 </div>
                                             </li>
@@ -311,11 +311,11 @@
                                             class="inline-flex items-center text-sm text-blue-600 hover:text-blue-500"
                                         >
                                             <x-heroicon-o-paper-clip class="mr-1 w-4 h-4" />
-                                            {{ __('Add attachment') }}
+                                            {{ __('content.Add attachment') }}
                                         </a>
                                     </div>
                                     <x-button.primary>
-                                        {{ __('Submit') }}
+                                        {{ __('content.Submit') }}
                                     </x-button.primary>
                                 </div>
                             </fieldset>

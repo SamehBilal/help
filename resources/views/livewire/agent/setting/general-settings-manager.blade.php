@@ -589,6 +589,60 @@
                     </x-slot:content>
                 </x-accordion>
             </form>
+
+             <!-- User sign-up -->
+             <form wire:submit.prevent="saveLanguagesSettings">
+                <x-accordion>
+                    <x-slot:title>
+                        {{ __('Languages') }}
+                    </x-slot:title>
+
+                    <x-slot:description>
+                        {{ __('Manage system language.') }}
+                    </x-slot:description>
+
+                    <x-slot:content>
+                        <div class="border-b py-6 border-slate-200 dark:border-slate-600">
+                            <fieldset
+                                wire:target="saveLanguagesSettings"
+                                wire:loading.attr="disabled"
+                                wire:loading.class="opacity-50"
+                                class="space-y-6 sm:space-y-5"
+                            >
+                            <div class="sm:grid sm:grid-cols-5 sm:items-start sm:gap-4 sm:border-t sm:border-slate-200 sm:pt-5 dark:border-slate-600">
+                                <x-label
+                                    for="saveLanguagesSettings"
+                                    :value="__('Languages')"
+                                    class="sm:mt-px sm:pt-2"
+                                />
+                                <div class="mt-1 sm:col-span-1 sm:mt-0">
+                                    <x-select
+                                        wire:model.defer="saveLanguagesSettings"
+                                        class="mt-1"
+                                    >
+                                    @foreach (App\Models\Language::all() as $lang)
+                                        <option value="{{ $lang->code }}">{{ __($lang->name) }}</option>
+                                    @endforeach
+                                    </x-select>
+                                </div>
+                            </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="mt-6 flex justify-end">
+                            <div class="flex items-center justify-end">
+                                <x-action-message
+                                    on="language-settings-saved"
+                                    class="mr-3"
+                                />
+                                <x-button.primary wire:loading.attr="disabled">
+                                    {{ __('Save changes') }}
+                                </x-button.primary>
+                            </div>
+                        </div>
+                    </x-slot:content>
+                </x-accordion>
+            </form>
         </div>
     </div>
 </div>

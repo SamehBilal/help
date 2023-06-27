@@ -29,7 +29,7 @@
                 class="sr-only"
                 for="search"
             >
-                {{ __('Type something to search...') }}
+                {{ __('content.Type something to search...') }}
             </label>
             <input
                 wire:model.debounce="query"
@@ -38,7 +38,7 @@
                 id="search"
                 type="search"
                 class="block w-full text-md border-0 pr-4 pl-12 py-5 text-white shadow-sm bg-white/20 placeholder:text-white/75 focus:ring-0 focus:bg-white/100 focus:text-slate-900 focus:placeholder:text-slate-500 transition duration-150 {{ $inputClasses ?? '' }}"
-                placeholder="{{ __('Search for Articles...') }}"
+                placeholder="{{ __('content.Search for Articles...') }}"
                 autocomplete="off"
             >
         </div>
@@ -65,12 +65,12 @@
                         </ul>
                     @else
                         <p class="p-4 text-sm text-slate-500">
-                            {{ __('There were no results matching your keyword.') }}
+                            {{ __('content.There were no results matching your keyword.') }}
                             <a
                                 href="{{ route('user.tickets.create') }}"
                                 class="text-blue-500 hover:text-blue-600"
                             >
-                                {{ __('Submit a new ticket') }}
+                                {{ __('content.Submit a new ticket') }}
                             </a>
                         </p>
                     @endif
@@ -80,7 +80,7 @@
 
         @if($showSuggestedSearches && count($suggestedSearches))
             <div class="flex items-center justify-center mt-2 px-4 text-white">
-                <span class="font-medium">{{ __('Suggested:') }}</span>
+                <span class="font-medium">{{ __('content.Suggested:') }}</span>
                 <ul class="inline-flex ml-3 space-x-3 overflow-x-auto text-sm whitespace-nowrap">
                     @foreach($suggestedSearches as $keyword)
                         <li>

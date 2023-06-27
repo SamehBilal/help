@@ -70,7 +70,7 @@
                                 href="/"
                                 class="text-base font-medium text-blue-600 hover:text-blue-500"
                             >
-                                {{ __('Go back home') }}<span aria-hidden="true"> &rarr;</span>
+                                {{ __('content.Go back home') }}<span aria-hidden="true"> &rarr;</span>
                             </a>
                         </div>
                     </div>

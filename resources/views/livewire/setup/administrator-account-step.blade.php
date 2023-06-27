@@ -6,7 +6,7 @@
         <x-card class="mt-5 relative overflow-hidden">
             <x-slot:header>
                 <h2 class="font-display text-lg text-slate-900">
-                    {{ __('Admin Credentials') }}
+                    {{ __('content.Admin Credentials') }}
                 </h2>
             </x-slot:header>
             <x-slot:content>
@@ -17,7 +17,7 @@
                     <div>
                         <x-label
                             for="nameInput"
-                            :value="__('Name')"
+                            :value="__('content.Name')"
                         />
                         <x-input
                             wire:model.defer="name"
@@ -34,7 +34,7 @@
                     <div>
                         <x-label
                             for="emailInput"
-                            :value="__('Email')"
+                            :value="__('content.Email')"
                         />
                         <x-input
                             wire:model.defer="email"
@@ -51,7 +51,7 @@
                     <div>
                         <x-label
                             for="passwordInput"
-                            :value="__('Password')"
+                            :value="__('content.Password')"
                         />
                         <x-input
                             wire:model.defer="password"
@@ -68,7 +68,7 @@
                     <div>
                         <x-label
                             for="passwordConfirmationInput"
-                            :value="__('Confirm password')"
+                            :value="__('content.Confirm password')"
                         />
                         <x-input
                             wire:model.defer="password_confirmation"
@@ -86,7 +86,7 @@
             </x-slot:content>
             <x-slot:footer class="flex items-center justify-end bg-slate-50">
                 <x-button.primary class="group">
-                    {{ __('Next step') }}
+                    {{ __('content.Next step') }}
                     <svg
                         class="mt-0.5 ml-2 -mr-1 stroke-white stroke-2"
                         fill="none"

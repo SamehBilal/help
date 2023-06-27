@@ -6,7 +6,7 @@
                     for="comment"
                     class="sr-only"
                 >
-                    {{ __('Comment') }}
+                    {{ __('content.Comment') }}
                 </label>
                 <x-tiptap-comment wire:model="comment.content">
                     <div class="flex justify-between pt-3 pb-1 px-2 -mx-2">
@@ -52,7 +52,7 @@
                                             <x-heroicon-m-eye class="h-4 w-4" />
                                         </span>
                                     </button>
-                                    <span class="hidden ml-3 text-sm font-medium text-slate-500 sm:block dark:text-slate-400">{{ __('Private') }}</span>
+                                    <span class="hidden ml-3 text-sm font-medium text-slate-500 sm:block dark:text-slate-400">{{ __('content.Private') }}</span>
                                 </div>
                                 <span class="text-slate-300 dark:text-slate-600">|</span>
                                 <x-dropdown
@@ -71,7 +71,7 @@
                                     </x-slot:trigger>
                                     <x-slot:content>
                                         <div class="px-4 py-2 border-b border-slate-200 font-medium text-xs text-slate-700 dark:border-slate-600 dark:text-slate-200">
-                                            {{ __('Insert a canned response into this comment') }}
+                                            {{ __('content.Insert a canned response into this comment') }}
                                         </div>
                                         <div class="relative max-h-64 overflow-y-auto">
                                             @forelse($this->user->cannedResponses as $cannedResponse)
@@ -89,12 +89,12 @@
                                                 </x-dropdown-link>
                                             @empty
                                                 <div class="px-4 py-2 text-sm text-slate-500 dark:text-slate-400">
-                                                    {{ __('No canned responses found!') }}
+                                                    {{ __('content.No canned responses found!') }}
                                                     <a
                                                         href="{{ route('agent.canned-responses') }}"
                                                         class="text-blue-600 hover:text-blue-500"
                                                     >
-                                                        {{ __('Create one') }}
+                                                        {{ __('content.Create one') }}
                                                     </a>
                                                 </div>
                                             @endforelse
@@ -118,7 +118,7 @@
                                     @click="$refs.fileInput.click()"
                                     type="button"
                                     class="inline-flex items-center text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300"
-                                    title="{{ __('Add attachments') }}"
+                                    title="{{ __('content.Add attachment') }}"
                                 >
                                     <x-heroicon-m-paper-clip class="w-4 h-4" />
                                 </button>
@@ -138,7 +138,7 @@
                                     @click="$refs.imageInput.click()"
                                     type="button"
                                     class="inline-flex items-center text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300"
-                                    title="{{ __('Insert a photo to your comment') }}"
+                                    title="{{ __('content.Insert a photo to your comment') }}"
                                 >
                                     <x-heroicon-m-photo class="w-4 h-4" />
                                 </button>
@@ -150,10 +150,10 @@
                                 type="button"
                                 class="mr-2"
                             >
-                                {{ __('Discard') }}
+                                {{ __('content.Discard') }}
                             </x-button.text>
                             <x-button.primary>
-                                {{ __('Post') }}
+                                {{ __('content.Post') }}
                             </x-button.primary>
                         </div>
                     </div>
@@ -183,7 +183,7 @@
                                     type="button"
                                     class="font-medium text-red-600 hover:text-red-500 dark:text-red-400 dark:hover:text-red-300"
                                 >
-                                    {{ __('Remove') }}
+                                    {{ __('content.Remove') }}
                                 </button>
                             </div>
                         </li>

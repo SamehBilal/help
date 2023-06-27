@@ -27,7 +27,8 @@ class GeneralSettings extends Settings
     public string $announcement_message;
     public string $announcement_link;
     public string $announcement_link_text;
-    
+    public string $saveLanguagesSettings;
+
     public static function group(): string
     {
         return 'general';

@@ -27,6 +27,7 @@ class GeneralSettingsManager extends Component
     public $reCaptchaEnabled;
     public $reCaptchaSiteKey;
     public $reCaptchaSecretKey;
+    public $saveLanguagesSettings;
 
     protected $listeners = ['refresh' => '$refresh'];
 
@@ -49,6 +50,7 @@ class GeneralSettingsManager extends Component
         $this->reCaptchaEnabled = $this->generalSettings->recaptcha_enabled;
         $this->reCaptchaSiteKey = $this->generalSettings->recaptcha_site_key;
         $this->reCaptchaSecretKey = $this->generalSettings->recaptcha_secret_key;
+        $this->saveLanguagesSettings = $this->generalSettings->saveLanguagesSettings;
     }
 
     public function updatedLogoFile()
@@ -163,6 +165,19 @@ class GeneralSettingsManager extends Component
         $this->generalSettings->recaptcha_secret_key = $this->reCaptchaSecretKey;
         $this->generalSettings->save();
         $this->emitSelf('re-captcha-settings-saved');
+    }
+
+    public function saveLanguagesSettings()
+    {
+        $this->validate([
+            'saveLanguagesSettings' => 'nullable',
+        ]);
+
+        app()->setLocale($this->saveLanguagesSettings);
+        session()->put('locale', $this->saveLanguagesSettings);
+        $this->generalSettings->saveLanguagesSettings = $this->saveLanguagesSettings;
+        $this->generalSettings->save();
+        $this->emitSelf('language-settings-saved');
     }
 
     public function getGeneralSettingsProperty()

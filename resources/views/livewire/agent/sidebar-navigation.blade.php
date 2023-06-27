@@ -212,6 +212,16 @@
                                         />
                                         {{ __('Categories') }}
                                     </a>
+                                    <a
+                                        href="{{ route('agent.languages') }}"
+                                        class="group flex items-center px-2 py-2 text-sm font-medium rounded-md {{ request()->routeIs('agent.languages') ? 'bg-slate-900 text-white' : 'text-slate-300 hover:bg-slate-700 hover:text-white' }}"
+                                    >
+                                        <x-heroicon-o-language
+                                            aria-hidden="true"
+                                            class="mr-4 flex-shrink-0 h-6 w-6 {{ request()->routeIs('agent.languages') ? 'text-slate-300' : 'text-slate-400 group-hover:text-slate-300' }}"
+                                        />
+                                        {{ __('Languages') }}
+                                    </a>
                                 </div>
                             </div>
                         @endif
@@ -403,6 +413,16 @@
                                     />
                                     {{ __('Categories') }}
                                 </a>
+                                <a
+                                        href="{{ route('agent.languages') }}"
+                                        class="group flex items-center px-2 py-2 text-sm font-medium rounded-md {{ request()->routeIs('agent.languages') ? 'bg-slate-900 text-white' : 'text-slate-300 hover:bg-slate-700 hover:text-white' }}"
+                                    >
+                                        <x-heroicon-o-language
+                                            aria-hidden="true"
+                                            class="mr-4 flex-shrink-0 h-6 w-6 {{ request()->routeIs('agent.languages') ? 'text-slate-300' : 'text-slate-400 group-hover:text-slate-300' }}"
+                                        />
+                                        {{ __('Languages') }}
+                                    </a>
                             </div>
                         </div>
                     @endif

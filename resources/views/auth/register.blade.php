@@ -9,10 +9,10 @@
                         </div>
                         <div class="ml-3">
                             <h3 class="text-sm font-medium text-red-800">
-                                {{ __('Whoop!') }}
+                                {{ __('content.Whoop!') }}
                             </h3>
                             <div class="mt-2 text-sm text-red-700">
-                                <p>{{ __('Registration is currently disabled.') }}</p>
+                                <p>{{ __('content.Registration is currently disabled.') }}</p>
                             </div>
                         </div>
                     </div>
@@ -29,7 +29,7 @@
                         >
                     </a>
                     <h2 class="mt-6 text-3xl font-display tracking-tight text-slate-900">
-                        {{ __('Sign up for a new account') }}
+                        {{ __('content.Sign up for a new account') }}
                     </h2>
                 </div>
                 <div class="mt-8">
@@ -37,7 +37,7 @@
                         <div>
                             <div>
                                 <p class="text-sm font-medium text-slate-700 sr-only">
-                                    {{ __('Sign in with') }}
+                                    {{ __('content.Sign in with') }}
                                 </p>
                                 <div class="mt-1">
                                     <div>
@@ -46,7 +46,7 @@
                                             class="inline-flex w-full justify-center rounded-md border border-slate-300 bg-white py-2 px-4 text-sm font-medium text-slate-500 shadow-sm hover:bg-slate-50"
                                         >
                                             <x-icon-envato class="-ml-1 mr-2 w-5 h-5" />
-                                            <span>{{ __('Sign up with Envato') }}</span>
+                                            <span>{{ __('content.Sign up with Envato') }}</span>
                                         </a>
                                     </div>
                                 </div>
@@ -59,7 +59,7 @@
                                     <div class="w-full border-t border-slate-300"></div>
                                 </div>
                                 <div class="relative flex justify-center text-sm">
-                                    <span class="bg-white px-2 text-slate-500">{{ __('Or continue with') }}</span>
+                                    <span class="bg-white px-2 text-slate-500">{{ __('content.Or continue with') }}</span>
                                 </div>
                             </div>
                         </div>
@@ -88,7 +88,7 @@
                             <div>
                                 <x-label
                                     for="name"
-                                    :value="__('Name')"
+                                    :value="__('content.Name')"
                                 />
                                 <x-input
                                     id="name"
@@ -104,7 +104,7 @@
                             <div>
                                 <x-label
                                     for="email"
-                                    :value="__('Email')"
+                                    :value="__('content.Email')"
                                 />
                                 <div class="mt-1">
                                     <x-input
@@ -121,7 +121,7 @@
                             <div>
                                 <x-label
                                     for="password"
-                                    :value="__('Password')"
+                                    :value="__('content.Password')"
                                 />
                                 <div class="mt-1">
                                     <x-input
@@ -137,7 +137,7 @@
                             <div>
                                 <x-label
                                     for="password_confirmation"
-                                    :value="__('Confirm Password')"
+                                    :value="__('content.Confirm Password')"
                                 />
                                 <x-input
                                     id="password_confirmation"
@@ -172,17 +172,17 @@
                             @endif
                             <div>
                                 <x-button.primary class="block w-full">
-                                    {{ __('Register') }}
+                                    {{ __('content.Register') }}
                                 </x-button.primary>
                             </div>
                             <div>
                                 <p class="text-sm text-center text-slate-600">
-                                    {{ __('Already have an account?') }}
+                                    {{ __('content.Already have an account?') }}
                                     <a
                                         href="{{ route('login') }}"
                                         class="font-medium text-blue-600 hover:text-blue-500"
                                     >
-                                        {{ __('Sign in') }}
+                                        {{ __('content.Sign in') }}
                                     </a>
                                 </p>
                             </div>

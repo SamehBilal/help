@@ -17,7 +17,7 @@
                         type="button"
                         class="font-medium text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
                     >
-                        {{ __('Open') }}
+                        {{ __('content.Open') }}
                     </button>
                 </div>
             </li>
@@ -25,7 +25,7 @@
     </ul>
     <x-dialog-modal wire:model="showPreviewModal">
         <x-slot name="title">
-            {{ __('Preview') }}
+            {{ __('content.Preview') }}
         </x-slot>
         <x-slot name="content">
             @if(Str::startsWith($previewMedia?->mime_type, 'image/'))
@@ -38,17 +38,17 @@
             @else
                 <div class="text-center">
                     <x-heroicon-o-eye-slash class="h-12 w-12 mx-auto text-slate-400" />
-                    <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">{{ __('The preview is not available for this file type, please download it.') }}</p>
+                    <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">{{ __('content.The preview is not available for this file type, please download it.') }}</p>
                 </div>
             @endif
         </x-slot>
         <x-slot name="footer">
             <div class="space-x-1">
                 <x-button.secondary wire:click="$set('showPreviewModal', false)">
-                    {{ __('Close') }}
+                    {{ __('content.Close') }}
                 </x-button.secondary>
                 <x-button.primary wire:click="download(' {{ $previewMedia?->id }} ')">
-                    {{ __('Download') }}
+                    {{ __('content.Download') }}
                 </x-button.primary>
             </div>
         </x-slot>

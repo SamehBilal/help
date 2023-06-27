@@ -1,12 +1,12 @@
 <div>
     <x-slot:title>
-        {{ __('Tickets') }}
+        {{ __('content.Tickets') }}
     </x-slot:title>
 
     <x-slot:header>
         <div class="relative py-6 max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-5xl lg:px-8">
             <h1 class="font-display font-medium tracking-tight text-white text-4xl">
-                {{ __('Tickets') }}
+                {{ __('content.Tickets') }}
             </h1>
         </div>
     </x-slot:header>
@@ -21,7 +21,7 @@
                         <div class="border-b border-slate-200 pl-4 pr-6 pt-4 pb-4 sm:pl-6 lg:pl-8 xl:pl-6 xl:pt-6">
                             <div class="flex items-center">
                                 <h1 class="flex-1 font-display text-lg">
-                                    {{ __('Tickets') }}
+                                    {{ __('content.Tickets') }}
                                 </h1>
                             </div>
                         </div>
@@ -52,7 +52,7 @@
                                             <!-- Meta info -->
                                             <div class="hidden flex-shrink-0 flex-col items-end space-y-3 sm:flex">
                                                 <p class="flex space-x-2 text-sm text-slate-500">
-                                                    <span>{{ __('Last activity :timeago', ['timeago' => $ticket->updated_at->diffForHumans()]) }}</span>
+                                                    <span>{{ __('content.Last activity') }} {{ $ticket->updated_at->diffForHumans() }}</span>
                                                 </p>
                                             </div>
                                         </div>
@@ -68,15 +68,15 @@
                     @else
                         <div class="h-full py-10 text-center">
                             <x-heroicon-o-inbox class="mx-auto h-12 w-12 text-slate-400" />
-                            <h3 class="mt-2 text-sm font-medium text-slate-900">{{ __('No tickets') }}</h3>
-                            <p class="mt-1 text-sm text-slate-500">{{ __('Get started by submitting a new ticket.') }}</p>
+                            <h3 class="mt-2 text-sm font-medium text-slate-900">{{ __('content.No tickets') }}</h3>
+                            <p class="mt-1 text-sm text-slate-500">{{ __('content.Get started by submitting a new ticket.') }}</p>
                             <div class="mt-6">
                                 <a
                                     href="{{ route('user.tickets.create') }}"
                                     class="inline-flex items-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                                 >
                                     <x-heroicon-m-plus class="-ml-1 mr-2 h-5 w-5" />
-                                    {{ __('Submit a ticket') }}
+                                    {{ __('content.Submit a ticket') }}
                                 </a>
                             </div>
                         </div>

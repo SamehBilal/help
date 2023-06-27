@@ -1,12 +1,12 @@
 <div>
     <x-slot:title>
-        {{ __('Ticket #:id', ['id' => $ticket->id]) }}
+        {{ __('content.Ticket #:id', ['id' => $ticket->id]) }}
     </x-slot:title>
 
     <x-slot:header>
         <div class="relative py-6 max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-5xl lg:px-8">
             <h1 class="font-display font-medium tracking-tight text-white text-4xl">
-                {{ __('Ticket #:id', ['id' => $ticket->id]) }}
+                {{ __('content.Ticket #:id', ['id' => $ticket->id]) }}
             </h1>
         </div>
     </x-slot:header>
@@ -28,7 +28,7 @@
                         </div>
                         <div>
                             <span class="text-sm text-slate-500">
-                                {{ __('Submitted :timeago on :date', ['timeago' => $ticket->created_at->diffForHumans(), 'date' => $ticket->created_at->toFormattedDateString()]) }}
+                                {{ __('content.Submitted :timeago on :date', ['timeago' => $ticket->created_at->diffForHumans(), 'date' => $ticket->created_at->toFormattedDateString()]) }}
                             </span>
                         </div>
                     </div>
@@ -58,14 +58,14 @@
                                             id="activity-title"
                                             class="text-lg font-medium text-slate-900"
                                         >
-                                            {{ __('Conversation') }}
+                                            {{ __('content.Conversation') }}
                                         </h2>
                                         <x-button.primary
                                             x-on:click="$dispatch('show-comment-form')"
                                             type="button"
                                         >
                                             <x-heroicon-m-arrow-uturn-left class="-ml-1 mr-2 w-5 h-5 text-white" />
-                                            {{ __('Reply') }}
+                                            {{ __('content.Reply') }}
                                         </x-button.primary>
                                     </div>
                                     <div class="pt-6">

@@ -1,16 +1,16 @@
 <div>
     <x-slot:title>
-        {{ __('Knowledge Base') }}
+        {{ __('content.Knowledge Base') }}
     </x-slot:title>
 
     <x-slot:description>
-        {{ __('Browse our topically organized knowledge base.') }}
+        {{ __('content.Browse our topically organized knowledge base.') }}
     </x-slot:description>
 
     <x-slot:header>
         <div class="relative -mb-36 max-w-md mx-auto px-4 pb-8 sm:max-w-3xl sm:px-6 lg:max-w-5xl lg:px-8">
             <h1 class="sr-only">
-                {{ __('How can we help you?') }}
+                {{ __('content.How can we help you?') }}
             </h1>
             <div class="relative z-30">
                 <livewire:search-form inputClasses="rounded-lg" />
@@ -34,7 +34,7 @@
                     >
                         <x-heroicon-m-home class="h-5 w-5 flex-shrink-0 text-slate-400" />
                         <span class="sr-only">
-                            {{ __('Home') }}
+                            {{ __('content.Home') }}
                         </span>
                     </a>
                 </div>
@@ -47,7 +47,7 @@
                         href="{{ route('guest.collection-list') }}"
                         class="ml-4 text-sm font-medium text-slate-500 hover:text-slate-700"
                     >
-                        {{ __('All collections') }}
+                        {{ __('content.All collections') }}
                     </a>
                 </div>
             </li>
@@ -99,7 +99,7 @@
                                         {{ trans_choice(':count article in this collection|:count articles in this collection', $collection->articles_count) }}
                                     </p>
                                     <p class="mt-1">
-                                        {{ __('Written by') }}
+                                        {{ __('content.Written by') }}
                                         @foreach($collection->authors->unique()->take(4) as $author)
                                             <span class="text-slate-700">{{ $author->name }}{{ $loop->last ? '' : ',' }}</span>
                                         @endforeach
@@ -117,7 +117,7 @@
         @empty
             <x-card class="relative overflow-hidden rounded-lg ring-slate-200 hover:ring-slate-300 transition ease-in-out duration-150">
                 <x-slot:content>
-                    {{ __('Whoops, there are no Articles yet as we are working on it! Please check back later.') }}
+                    {{ __('content.Whoops, there are no Articles yet as we are working on it! Please check back later.') }}
                 </x-slot:content>
             </x-card>
         @endforelse

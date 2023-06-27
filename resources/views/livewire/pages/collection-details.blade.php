@@ -31,7 +31,7 @@
                     >
                         <x-heroicon-m-home class="h-5 w-5 flex-shrink-0 text-slate-400" />
                         <span class="sr-only">
-                            {{ __('Home') }}
+                            {{ __('content.Home') }}
                         </span>
                     </a>
                 </div>
@@ -44,7 +44,7 @@
                         href="{{ route('guest.collection-list') }}"
                         class="ml-4 text-sm font-medium text-slate-500 hover:text-slate-700"
                     >
-                        {{ __('All collections') }}
+                        {{ __('content.All collections') }}
                     </a>
                 </div>
             </li>
@@ -97,11 +97,11 @@
                                     </div>
                                     <div class="text-xs text-slate-500">
                                         <p>
-                                            {{ __('Written by') }}
+                                            {{ __('content.Written by') }}
                                             <span class="text-slate-700">{{ $article->author->name }}</span>
                                         </p>
                                         <p class="mt-1">
-                                            {{ __('Last updated') }}
+                                            {{ __('content.Last updated') }}
                                             <time datetime="{{ $article->updated_at->toIso8601ZuluString() }}">{{ $article->updated_at->diffForHumans() }}</time>
                                         </p>
                                     </div>

@@ -10,7 +10,7 @@
                     >
                 </a>
                 <h2 class="mt-6 text-3xl font-display tracking-tight text-slate-900">
-                    {{ __('Update your password') }}
+                    {{ __('content.Update your password') }}
                 </h2>
             </div>
 
@@ -37,7 +37,7 @@
                         <div>
                             <x-label
                                 for="email"
-                                :value="__('Email')"
+                                :value="__('content.Email')"
                             />
                             <x-input
                                 id="email"
@@ -53,7 +53,7 @@
                         <div class="mt-4">
                             <x-label
                                 for="password"
-                                :value="__('Password')"
+                                :value="__('content.Password')"
                             />
                             <x-input
                                 id="password"
@@ -67,7 +67,7 @@
                         <div class="mt-4">
                             <x-label
                                 for="password_confirmation"
-                                :value="__('Confirm Password')"
+                                :value="__('content.Confirm Password')"
                             />
                             <x-input
                                 id="password_confirmation"
@@ -79,7 +79,7 @@
                         </div>
                         <div class="flex items-center justify-end mt-4">
                             <x-button.primary>
-                                {{ __('Update Password') }}
+                                {{ __('content.Update Password') }}
                             </x-button.primary>
                         </div>
                     </form>

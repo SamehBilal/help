@@ -1,5 +1,5 @@
 @extends('errors::minimal')
 
-@section('title', __('Internal Server Error'))
+@section('title', __('content.Internal Server Error'))
 @section('code', '500')
-@section('message', __('Oops, something went wrong'))
+@section('message', __('content.Oops, something went wrong'))
